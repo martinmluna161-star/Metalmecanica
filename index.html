@@ -465,23 +465,17 @@
     btn.disabled = true;
     btn.innerHTML = '<span class="spinner"></span> ENVIANDO...';
 
-    fetch(SCRIPT_URL, {
-      method: 'POST',
-      body: new URLSearchParams(datos),
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-    })
-    .then(function(r) { return r.json(); })
-    .then(function(resp) {
+    // GET + no-cors: único método que funciona desde GitHub Pages hacia Apps Script
+    var qs = new URLSearchParams(datos).toString();
+    fetch(SCRIPT_URL + '?' + qs, { method: 'GET', mode: 'no-cors' })
+    .then(function() {
+      // no-cors no devuelve body — asumimos éxito si no hubo error de red
       btn.disabled = false;
       btn.innerHTML = '✈ &nbsp;REGISTRAR VIAJE';
-      if (resp.status === 'ok') {
-        showOk(datos.chofer + ' — ' + datos.tipo + ' — Remito ' + datos.remito + ' → fila ' + (resp.fila || '?') + ' del Sheet.');
-        viajes.unshift(datos);
-        renderTabla();
-        limpiarCampos();
-      } else {
-        showErr('Respuesta inesperada del servidor: ' + JSON.stringify(resp));
-      }
+      showOk(datos.chofer + ' — ' + datos.tipo + ' — Remito ' + datos.remito + ' registrado en el Sheet.');
+      viajes.unshift(datos);
+      renderTabla();
+      limpiarCampos();
     })
     .catch(function(err) {
       btn.disabled = false;
