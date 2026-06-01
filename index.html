@@ -20,144 +20,85 @@
     --error-bg:   #fde8e8;
     --error:      #c0272d;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Barlow', sans-serif; background: #eef1f8; min-height: 100vh; color: var(--text); }
 
-  body {
-    font-family: 'Barlow', sans-serif;
-    background: #eef1f8;
-    min-height: 100vh;
-    color: var(--text);
-  }
-
-  header {
-    background: var(--navy);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 12px rgba(27,42,94,0.3);
-  }
-  .header-inner {
-    max-width: 720px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 24px;
-  }
+  header { background: var(--navy); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(27,42,94,0.3); }
+  .header-inner { max-width: 720px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 12px 24px; }
   .header-logo { display: flex; align-items: center; gap: 14px; }
-  .logo-box {
-    width: 48px; height: 48px;
-    background: white; border-radius: 6px;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700; font-size: 15px;
-    color: var(--navy); letter-spacing: 1px;
-    flex-shrink: 0;
-  }
-  .header-title h1 {
-    font-family: 'Barlow Condensed', sans-serif;
-    color: white; font-size: 20px; font-weight: 700;
-    letter-spacing: 0.5px; line-height: 1.1;
-  }
-  .header-title p {
-    color: rgba(255,255,255,0.55); font-size: 12px;
-    text-transform: uppercase; letter-spacing: 0.5px;
-  }
-  .header-badge {
-    background: var(--orange); color: white;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 13px; font-weight: 600;
-    padding: 5px 14px; border-radius: 20px;
-  }
-  .red-stripe {
-    height: 4px;
-    background: linear-gradient(90deg, var(--red) 0%, var(--orange) 100%);
-  }
+  .logo-box { width: 48px; height: 48px; background: white; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; color: var(--navy); flex-shrink: 0; }
+  .header-title h1 { font-family: 'Barlow Condensed', sans-serif; color: white; font-size: 20px; font-weight: 700; line-height: 1.1; }
+  .header-title p { color: rgba(255,255,255,0.55); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .header-badge { background: var(--orange); color: white; font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 600; padding: 5px 14px; border-radius: 20px; }
+  .red-stripe { height: 4px; background: linear-gradient(90deg, var(--red) 0%, var(--orange) 100%); }
 
   main { max-width: 720px; margin: 0 auto; padding: 28px 20px 60px; }
 
-  .section-header {
-    display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
-  }
-  .section-num {
-    width: 26px; height: 26px; background: var(--navy); color: white;
-    border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px;
-    flex-shrink: 0;
-  }
-  .section-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 16px; font-weight: 600; color: var(--navy);
-  }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+  .section-num { width: 26px; height: 26px; background: var(--navy); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; flex-shrink: 0; }
+  .section-title { font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 600; color: var(--navy); }
 
-  .card {
-    background: white; border-radius: 12px;
-    border: 1px solid var(--border); padding: 20px 22px; margin-bottom: 20px;
-  }
+  .card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 20px 22px; margin-bottom: 20px; }
   .card-orange { border-left: 4px solid var(--orange); }
   .card-navy   { border-left: 4px solid var(--navy); }
+  .card-red    { border-left: 4px solid var(--red); }
 
   .form-grid { display: grid; gap: 14px; }
   .col-2 { grid-template-columns: 1fr 1fr; }
   .col-3 { grid-template-columns: 1fr 1fr 1fr; }
-
   .form-group { display: flex; flex-direction: column; gap: 5px; }
 
-  label {
-    font-size: 11px; font-weight: 600; color: var(--muted);
-    text-transform: uppercase; letter-spacing: 0.5px;
-  }
+  label { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
   label .req { color: var(--red); }
 
   input, select {
-    width: 100%; padding: 10px 12px;
-    border: 1.5px solid var(--border); border-radius: 7px;
-    font-family: 'Barlow', sans-serif; font-size: 14px;
-    color: var(--text); background: white;
-    transition: border-color 0.15s, box-shadow 0.15s;
-    outline: none;
+    width: 100%; padding: 10px 12px; border: 1.5px solid var(--border); border-radius: 7px;
+    font-family: 'Barlow', sans-serif; font-size: 14px; color: var(--text); background: white;
+    transition: border-color 0.15s, box-shadow 0.15s; outline: none;
   }
-  input:focus, select:focus {
-    border-color: var(--navy);
-    box-shadow: 0 0 0 3px rgba(27,42,94,0.1);
-  }
-  input.err, select.err {
-    border-color: var(--red);
-    box-shadow: 0 0 0 3px rgba(192,39,45,0.1);
-  }
+  input:focus, select:focus { border-color: var(--navy); box-shadow: 0 0 0 3px rgba(27,42,94,0.1); }
+  input.err, select.err { border-color: var(--red); box-shadow: 0 0 0 3px rgba(192,39,45,0.1); }
   select { cursor: pointer; }
   input[type="time"] { font-variant-numeric: tabular-nums; }
   .hint { font-size: 11px; color: var(--muted); margin-top: 2px; }
 
   .tipo-toggle { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 4px; }
-  .tipo-btn {
-    padding: 13px 10px; border: 2px solid var(--border);
-    border-radius: 9px; background: white; cursor: pointer;
-    text-align: center; font-family: 'Barlow Condensed', sans-serif;
-    font-size: 16px; font-weight: 700; letter-spacing: 0.5px;
-    color: var(--muted); transition: all 0.15s; user-select: none;
-  }
+  .tipo-btn { padding: 13px 10px; border: 2px solid var(--border); border-radius: 9px; background: white; cursor: pointer; text-align: center; font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; color: var(--muted); transition: all 0.15s; user-select: none; }
   .tipo-btn:hover { border-color: var(--navy); color: var(--navy); }
   .tipo-btn.ac { border-color: var(--orange); background: #fff5eb; color: #7a3d00; }
-  .tipo-btn.ad { border-color: var(--navy);   background: var(--navy-bg); color: var(--navy); }
+  .tipo-btn.ad { border-color: var(--navy); background: var(--navy-bg); color: var(--navy); }
   .tipo-err .tipo-btn { border-color: var(--red) !important; }
 
   .divider { height: 1px; background: var(--border); margin: 18px 0; }
 
-  .duracion-box {
-    margin-top: 14px; padding: 10px 14px;
-    background: var(--navy-bg); border-radius: 8px;
-    font-size: 13px; color: var(--muted);
-  }
+  .duracion-box { margin-top: 14px; padding: 10px 14px; background: var(--navy-bg); border-radius: 8px; font-size: 13px; color: var(--muted); }
   .duracion-box strong { color: var(--navy); }
   #duracionCalc { font-weight: 600; color: var(--navy); margin-left: 6px; }
 
-  .alert {
-    border-radius: 10px; padding: 13px 16px;
-    display: none; align-items: flex-start; gap: 12px;
-    font-size: 14px; line-height: 1.5; margin-bottom: 16px;
+  /* ── UPLOAD ZONE ── */
+  .upload-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .upload-zone {
+    border: 2px dashed var(--border); border-radius: 10px;
+    padding: 20px 12px; text-align: center; cursor: pointer;
+    transition: all 0.2s; background: var(--navy-bg); position: relative;
   }
+  .upload-zone:hover, .upload-zone.drag { border-color: var(--navy); background: #e4eaf8; }
+  .upload-zone.has-file { border-color: var(--orange); border-style: solid; background: #fff8f0; }
+  .upload-zone input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
+  .upload-icon { font-size: 28px; margin-bottom: 6px; }
+  .upload-label { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .upload-hint { font-size: 11px; color: var(--muted); }
+  .upload-preview { width: 100%; max-height: 120px; object-fit: cover; border-radius: 6px; margin-top: 8px; display: none; }
+  .upload-filename { font-size: 11px; color: var(--navy); font-weight: 600; margin-top: 6px; word-break: break-all; display: none; }
+  .upload-remove { display: none; position: absolute; top: 6px; right: 8px; background: var(--red); color: white; border: none; border-radius: 50%; width: 20px; height: 20px; font-size: 12px; cursor: pointer; line-height: 20px; text-align: center; z-index: 2; }
+
+  /* Progress bar */
+  .progress-wrap { display: none; margin-top: 12px; }
+  .progress-bar-bg { height: 6px; background: var(--border); border-radius: 4px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; background: linear-gradient(90deg, var(--navy), var(--orange)); border-radius: 4px; width: 0%; transition: width 0.3s; }
+  .progress-label { font-size: 11px; color: var(--muted); margin-top: 4px; text-align: center; }
+
+  .alert { border-radius: 10px; padding: 13px 16px; display: none; align-items: flex-start; gap: 12px; font-size: 14px; line-height: 1.5; margin-bottom: 16px; }
   .alert.show { display: flex; }
   .alert-ok  { background: var(--success-bg); border: 1.5px solid #a8dfc0; color: var(--success); }
   .alert-err { background: var(--error-bg);   border: 1.5px solid #f4b5b5; color: var(--error); }
@@ -165,49 +106,21 @@
   .alert strong { display: block; margin-bottom: 2px; }
 
   .submit-area { display: flex; flex-direction: column; align-items: center; gap: 12px; }
-
-  .btn-main {
-    width: 100%; max-width: 400px;
-    padding: 15px 32px; background: var(--navy); color: white;
-    border: none; border-radius: 10px;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 18px; font-weight: 700; letter-spacing: 1px;
-    text-transform: uppercase; cursor: pointer;
-    transition: background 0.15s, transform 0.1s;
-  }
+  .btn-main { width: 100%; max-width: 400px; padding: 15px 32px; background: var(--navy); color: white; border: none; border-radius: 10px; font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: background 0.15s, transform 0.1s; }
   .btn-main:hover  { background: var(--navy-light); }
   .btn-main:active { transform: scale(0.98); }
   .btn-main:disabled { background: #aaa; cursor: not-allowed; transform: none; }
-
-  .btn-sec {
-    background: none; border: 1.5px solid var(--border);
-    color: var(--muted); padding: 9px 20px; border-radius: 8px;
-    font-size: 13px; font-family: 'Barlow', sans-serif;
-    cursor: pointer; transition: all 0.15s;
-  }
+  .btn-sec { background: none; border: 1.5px solid var(--border); color: var(--muted); padding: 9px 20px; border-radius: 8px; font-size: 13px; font-family: 'Barlow', sans-serif; cursor: pointer; transition: all 0.15s; }
   .btn-sec:hover { border-color: var(--navy); color: var(--navy); }
 
   @keyframes spin { to { transform: rotate(360deg); } }
-  .spinner {
-    display: inline-block; width: 17px; height: 17px;
-    border: 2px solid rgba(255,255,255,0.4); border-top-color: white;
-    border-radius: 50%; animation: spin 0.7s linear infinite;
-    margin-right: 8px; vertical-align: middle;
-  }
+  .spinner { display: inline-block; width: 17px; height: 17px; border: 2px solid rgba(255,255,255,0.4); border-top-color: white; border-radius: 50%; animation: spin 0.7s linear infinite; margin-right: 8px; vertical-align: middle; }
 
-  /* Tabla recientes */
   .rec-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
   .rec-title { font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 600; color: var(--navy); }
-  .badge-n {
-    background: var(--navy); color: white;
-    font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 20px;
-  }
+  .badge-n { background: var(--navy); color: white; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 20px; }
   table { width: 100%; border-collapse: collapse; font-size: 12px; }
-  th {
-    background: var(--navy); color: white;
-    padding: 7px 9px; text-align: left;
-    font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 11px;
-  }
+  th { background: var(--navy); color: white; padding: 7px 9px; text-align: left; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 11px; }
   td { padding: 7px 9px; border-bottom: 1px solid var(--border); }
   tr:last-child td { border-bottom: none; }
   tr:nth-child(even) td { background: var(--navy-bg); }
@@ -215,16 +128,12 @@
   .bd { display:inline-block; background:#e8ecf7; color:var(--navy); border:1px solid #b5c1e0; padding:2px 7px; border-radius:12px; font-size:10px; font-weight:600; }
   .no-data { text-align:center; color:var(--muted); font-size:13px; padding:18px; }
 
-  footer {
-    text-align: center; font-size: 11px; color: var(--muted);
-    padding: 20px; border-top: 1px solid var(--border);
-    max-width: 720px; margin: 0 auto;
-  }
+  footer { text-align: center; font-size: 11px; color: var(--muted); padding: 20px; border-top: 1px solid var(--border); max-width: 720px; margin: 0 auto; }
 
   @media (max-width: 520px) {
-    .col-2, .col-3 { grid-template-columns: 1fr; }
+    .col-2, .col-3, .upload-grid { grid-template-columns: 1fr; }
     .header-badge { display: none; }
-    th:nth-child(n+4), td:nth-child(n+4) { display: none; }
+    th:nth-child(n+5), td:nth-child(n+5) { display: none; }
   }
 </style>
 </head>
@@ -270,9 +179,7 @@
         <input type="text" id="remito" placeholder="0062-00019491" required>
       </div>
     </div>
-
     <div class="divider"></div>
-
     <div class="form-grid col-2">
       <div class="form-group">
         <label>Origen <span class="req">*</span></label>
@@ -291,11 +198,9 @@
         </select>
       </div>
     </div>
-
     <div class="divider"></div>
-
     <div style="margin-bottom:8px;">
-      <label style="text-transform:none; font-size:13px; font-weight:600; color:var(--navy); letter-spacing:0;">
+      <label style="text-transform:none;font-size:13px;font-weight:600;color:var(--navy);letter-spacing:0;">
         Tipo de operación <span class="req">*</span>
       </label>
     </div>
@@ -327,6 +232,51 @@
     <div class="duracion-box">
       <strong>Duración del viaje:</strong>
       <span id="duracionCalc">—</span>
+    </div>
+  </div>
+
+  <!-- 3 · FOTOS DEL REMITO -->
+  <div class="section-header">
+    <div class="section-num">3</div>
+    <div class="section-title">Fotos del Remito</div>
+  </div>
+  <div class="card card-red">
+    <div class="upload-grid">
+      <!-- Foto 1 -->
+      <div>
+        <label style="margin-bottom:8px;display:block;">Foto 1 — Frente del remito</label>
+        <div class="upload-zone" id="zone1" ondragover="onDrag(event,1)" ondragleave="offDrag(1)" ondrop="onDrop(event,1)">
+          <input type="file" id="file1" accept="image/*" capture="environment" onchange="onFile(1)">
+          <div id="zone1-content">
+            <div class="upload-icon">📷</div>
+            <div class="upload-label">Tocar para fotografiar</div>
+            <div class="upload-hint">JPG · PNG · hasta 10MB</div>
+          </div>
+          <img id="prev1" class="upload-preview">
+          <div id="name1" class="upload-filename"></div>
+          <button class="upload-remove" id="rem1" onclick="removeFile(event,1)">✕</button>
+        </div>
+      </div>
+      <!-- Foto 2 -->
+      <div>
+        <label style="margin-bottom:8px;display:block;">Foto 2 — Dorso / Hoja de control</label>
+        <div class="upload-zone" id="zone2" ondragover="onDrag(event,2)" ondragleave="offDrag(2)" ondrop="onDrop(event,2)">
+          <input type="file" id="file2" accept="image/*" capture="environment" onchange="onFile(2)">
+          <div id="zone2-content">
+            <div class="upload-icon">📷</div>
+            <div class="upload-label">Tocar para fotografiar</div>
+            <div class="upload-hint">JPG · PNG · hasta 10MB</div>
+          </div>
+          <img id="prev2" class="upload-preview">
+          <div id="name2" class="upload-filename"></div>
+          <button class="upload-remove" id="rem2" onclick="removeFile(event,2)">✕</button>
+        </div>
+      </div>
+    </div>
+    <!-- Progress -->
+    <div class="progress-wrap" id="progressWrap">
+      <div class="progress-bar-bg"><div class="progress-bar-fill" id="progressFill"></div></div>
+      <div class="progress-label" id="progressLabel">Subiendo imágenes...</div>
     </div>
   </div>
 
@@ -378,20 +328,20 @@
 
   var viajes = [];
   var tipo = '';
+  var imgData = { 1: null, 2: null }; // { base64, name, mime }
 
-  // Init
+  // ── Init ────────────────────────────────────────────────────────────────────
   window.addEventListener('DOMContentLoaded', function() {
     var hoy = new Date();
     document.getElementById('fecha').value =
       hoy.getFullYear() + '-' +
       String(hoy.getMonth()+1).padStart(2,'0') + '-' +
       String(hoy.getDate()).padStart(2,'0');
-
     document.getElementById('inicViaje').addEventListener('change', calcDur);
     document.getElementById('terViaje').addEventListener('change', calcDur);
   });
 
-  // Auto-destino
+  // ── Auto-destino ─────────────────────────────────────────────────────────────
   function autoDestino() {
     var o = document.getElementById('origen').value;
     document.getElementById('destino').value =
@@ -399,7 +349,7 @@
       o === 'Metalmecanica'      ? 'Metalmecanica Lami' : '';
   }
 
-  // Tipo toggle
+  // ── Tipo toggle ──────────────────────────────────────────────────────────────
   function setTipo(t) {
     tipo = t;
     document.getElementById('tipo').value = t;
@@ -408,7 +358,7 @@
     document.getElementById('tipoWrap').classList.remove('tipo-err');
   }
 
-  // Duración
+  // ── Duración ─────────────────────────────────────────────────────────────────
   function calcDur() {
     var i = document.getElementById('inicViaje').value;
     var t = document.getElementById('terViaje').value;
@@ -417,12 +367,58 @@
     var m = (toMin(t) - toMin(i) + 1440) % 1440;
     el.textContent = Math.floor(m/60) + 'h ' + String(m%60).padStart(2,'0') + 'min';
   }
-  function toMin(hhmm) {
-    var p = hhmm.split(':');
-    return parseInt(p[0])*60 + parseInt(p[1]);
+  function toMin(hhmm) { var p=hhmm.split(':'); return parseInt(p[0])*60+parseInt(p[1]); }
+
+  // ── Upload handlers ───────────────────────────────────────────────────────────
+  function onFile(n) {
+    var f = document.getElementById('file'+n).files[0];
+    if (f) loadFile(n, f);
+  }
+  function onDrag(e, n) { e.preventDefault(); document.getElementById('zone'+n).classList.add('drag'); }
+  function offDrag(n) { document.getElementById('zone'+n).classList.remove('drag'); }
+  function onDrop(e, n) {
+    e.preventDefault();
+    offDrag(n);
+    var f = e.dataTransfer.files[0];
+    if (f && f.type.startsWith('image/')) loadFile(n, f);
   }
 
-  // Validar
+  function loadFile(n, file) {
+    if (file.size > 10 * 1024 * 1024) {
+      alert('La imagen supera los 10MB. Usá una foto de menor resolución.');
+      return;
+    }
+    var reader = new FileReader();
+    reader.onload = function(ev) {
+      var dataUrl = ev.target.result;
+      var base64  = dataUrl.split(',')[1];
+      imgData[n] = { base64: base64, name: file.name, mime: file.type };
+
+      // Preview
+      var prev = document.getElementById('prev'+n);
+      prev.src = dataUrl;
+      prev.style.display = 'block';
+      document.getElementById('name'+n).textContent = file.name;
+      document.getElementById('name'+n).style.display = 'block';
+      document.getElementById('rem'+n).style.display  = 'block';
+      document.getElementById('zone'+n).classList.add('has-file');
+      document.getElementById('zone'+n+'-content').style.display = 'none';
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function removeFile(e, n) {
+    e.stopPropagation();
+    imgData[n] = null;
+    document.getElementById('file'+n).value = '';
+    document.getElementById('prev'+n).style.display = 'none';
+    document.getElementById('name'+n).style.display = 'none';
+    document.getElementById('rem'+n).style.display  = 'none';
+    document.getElementById('zone'+n).classList.remove('has-file');
+    document.getElementById('zone'+n+'-content').style.display = '';
+  }
+
+  // ── Validar ───────────────────────────────────────────────────────────────────
   function validar() {
     var ids = ['fecha','chofer','remito','origen','destino','inicViaje','terViaje'];
     var ok = true;
@@ -431,20 +427,21 @@
       if (!el.value.trim()) { el.classList.add('err'); ok = false; }
       else el.classList.remove('err');
     });
-    if (!tipo) {
-      document.getElementById('tipoWrap').classList.add('tipo-err');
-      ok = false;
-    }
+    if (!tipo) { document.getElementById('tipoWrap').classList.add('tipo-err'); ok = false; }
     return ok;
   }
 
-  // Enviar
+  // ── Enviar ────────────────────────────────────────────────────────────────────
   function enviar() {
     hideAlertas();
     if (!validar()) {
       showErr('Completá todos los campos obligatorios (marcados con *).');
       return;
     }
+
+    var btn = document.getElementById('btnSend');
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner"></span> ENVIANDO...';
 
     var datos = {
       hoja:      HOJA,
@@ -461,50 +458,77 @@
       importeViaje: '',
     };
 
-    var btn = document.getElementById('btnSend');
-    btn.disabled = true;
-    btn.innerHTML = '<span class="spinner"></span> ENVIANDO...';
+    // ── Subir imágenes primero (POST con JSON — el script las sube a Drive) ──
+    var img1 = imgData[1];
+    var img2 = imgData[2];
 
-    // GET + no-cors: único método que funciona desde GitHub Pages hacia Apps Script
-    var qs = new URLSearchParams(datos).toString();
-    fetch(SCRIPT_URL + '?' + qs, { method: 'GET', mode: 'no-cors' })
+    setProgress(10, 'Preparando envío...');
+
+    // Construimos el payload completo: datos + imágenes en base64
+    var payload = Object.assign({}, datos, {
+      img1Base64: img1 ? img1.base64 : '',
+      img1Name:   img1 ? img1.name   : '',
+      img1Mime:   img1 ? img1.mime   : '',
+      img2Base64: img2 ? img2.base64 : '',
+      img2Name:   img2 ? img2.name   : '',
+      img2Mime:   img2 ? img2.mime   : '',
+    });
+
+    setProgress(30, 'Subiendo fotos a Drive...');
+
+    // POST con JSON (el script tiene CORS abierto para POST desde cualquier origen)
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify(payload)
+    })
     .then(function() {
-      // no-cors no devuelve body — asumimos éxito si no hubo error de red
+      // no-cors → opaque response, asumimos éxito
+      setProgress(100, 'Registrado correctamente');
+      setTimeout(function() { document.getElementById('progressWrap').style.display='none'; }, 1500);
       btn.disabled = false;
       btn.innerHTML = '✈ &nbsp;REGISTRAR VIAJE';
-      showOk(datos.chofer + ' — ' + datos.tipo + ' — Remito ' + datos.remito + ' registrado en el Sheet.');
-      viajes.unshift(datos);
+      showOk(datos.chofer + ' — ' + datos.tipo + ' — Remito ' + datos.remito + ' registrado. ' +
+             (img1||img2 ? 'Fotos enviadas a Drive.' : 'Sin fotos adjuntas.'));
+      viajes.unshift(Object.assign({}, datos, { fotos: (img1?1:0)+(img2?1:0) }));
       renderTabla();
       limpiarCampos();
     })
     .catch(function(err) {
+      document.getElementById('progressWrap').style.display='none';
       btn.disabled = false;
       btn.innerHTML = '✈ &nbsp;REGISTRAR VIAJE';
-      showErr('No se pudo conectar con Google Sheets. Verificá tu conexión a internet. (' + err.message + ')');
+      showErr('Error de conexión. Verificá tu internet e intentá de nuevo. (' + err.message + ')');
     });
   }
 
-  // Tabla
+  function setProgress(pct, label) {
+    document.getElementById('progressWrap').style.display = 'block';
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('progressLabel').textContent = label;
+  }
+
+  // ── Tabla sesión ──────────────────────────────────────────────────────────────
   function renderTabla() {
     document.getElementById('badgeN').textContent = viajes.length;
     if (!viajes.length) {
       document.getElementById('tablaWrap').innerHTML = '<p class="no-data">Aún no se registraron viajes.</p>';
       return;
     }
-    var h = '<table><thead><tr><th>Fecha</th><th>Chofer</th><th>Origen</th><th>Destino</th><th>Tipo</th><th>Remito</th><th>Inicio</th><th>Término</th></tr></thead><tbody>';
+    var h = '<table><thead><tr><th>Fecha</th><th>Chofer</th><th>Origen→Destino</th><th>Tipo</th><th>Remito</th><th>Inicio</th><th>Término</th><th>Fotos</th></tr></thead><tbody>';
     viajes.slice(0,20).forEach(function(v) {
       var b = v.tipo==='Carga' ? '<span class="bc">↑ Carga</span>' : '<span class="bd">↓ Descarga</span>';
-      h += '<tr><td>'+v.fecha+'</td><td>'+v.chofer+'</td><td>'+v.origen+'</td><td>'+v.destino+'</td><td>'+b+'</td><td>'+v.remito+'</td><td>'+v.inicViaje+'</td><td>'+v.terViaje+'</td></tr>';
+      var fot = v.fotos > 0 ? '📷 '+v.fotos : '—';
+      h += '<tr><td>'+v.fecha+'</td><td>'+v.chofer+'</td><td>'+v.origen+' → '+v.destino+'</td><td>'+b+'</td><td>'+v.remito+'</td><td>'+v.inicViaje+'</td><td>'+v.terViaje+'</td><td>'+fot+'</td></tr>';
     });
     h += '</tbody></table>';
     document.getElementById('tablaWrap').innerHTML = h;
   }
 
-  // Helpers
-  function fmtFecha(iso) {
-    var p = iso.split('-');
-    return p[2]+'/'+p[1]+'/'+p[0];
-  }
+  // ── Helpers ───────────────────────────────────────────────────────────────────
+  function fmtFecha(iso) { var p=iso.split('-'); return p[2]+'/'+p[1]+'/'+p[0]; }
+
   function showOk(msg) {
     document.getElementById('aOkMsg').textContent = ' ' + msg;
     document.getElementById('aOk').classList.add('show');
@@ -519,10 +543,13 @@
     document.getElementById('aOk').classList.remove('show');
     document.getElementById('aErr').classList.remove('show');
   }
+
   function limpiarCampos() {
     ['remito','inicViaje','terViaje'].forEach(function(id){ document.getElementById(id).value=''; });
     setTipo('');
     document.getElementById('duracionCalc').textContent = '—';
+    removeFile({stopPropagation:function(){}}, 1);
+    removeFile({stopPropagation:function(){}}, 2);
   }
   function limpiar() {
     limpiarCampos();
